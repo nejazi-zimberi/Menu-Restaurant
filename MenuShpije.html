@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff8f0, #f2efe9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    color: #4e342e;
+}
+
+/* Container */
+.menu-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    padding: 40px 30px;
+    max-width: 900px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.menu-container:hover {
+    transform: translateY(-5px);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #3e2723;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #6d4c41;
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #a0522d;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+/* Paragraphs */
+p {
+    text-align: center;
+    font-style: italic;
+    margin: 15px 0 25px 0;
+    line-height: 1.6;
+}
+
+/* Images */
+.image {
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 15px;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+/* Menu Sections */
+.menu-section {
+    border: 2px solid #d7ccc8;
+    border-radius: 15px;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    background-color: #fdfaf7;
+}
+
+.menu-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Each Item Box */
+.extra-item {
+    border: 2px solid #d7ccc8;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.extra-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #795548;
+    text-align: center;
+}
+
+hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+
+    <!-- Menu Tradicionale & Femije -->
+    <div class="menu-section">
+        
+        <h2>Menu Tradicionale </h2>
+
+        <div class="extra-item">
+            <div class="image">
+                <img src="image/menu.png" alt="Menuja tradicionale shqiptare">
+            </div>
+            <p>Përfshin: Sallatë e përzier sezonale, Pogaçe, Speca me kajmak, Fli tradicionale, Ajvar shtëpie, Kos të kulluar, Pasul në tavë, Bakllava ose Sytliajsh</p>
+            <h3>1000 den. / 16 €</h3>
+        </div>
+
+        <h2>Menu për Fëmijë</h2>
+
+        <div class="extra-item">
+            <div class="image">
+                <img src="image/kofshpule.jpg" alt="Menuja për fëmijë">
+            </div>
+            <p>Përfshin: Kofshe pule, Pomfit, Leng frutash</p>
+            <h3>600 den. / 10 €</h3>
+        </div>
+    </div>
+
+    <!-- Menu Shtesë -->
+    <div class="menu-section">
+        <h2>Menu Shtesë</h2>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/pogaq.jpg" alt="Pogaçe e vogël"></div>
+            <h3>Pogaçe e vogël - 150 den</h3>
+            <h3>Pogaçe e madhe - 250 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/furnarina.webp" alt="Furnarina"></div>
+            <h3>Furnarina - 100 den</h3>
+            <h3>Furnarina me kashkavall - 130 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/specetepjekura.jpg" alt="Spec i pjekur"></div>
+            <h3>Spec i pjekur - 30 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/ajvar.jpeg" alt="Ajvar"></div>
+            <h3>Ajvar - 120 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/kosikulluar.jpeg" alt="Kos i kulluar"></div>
+            <h3>Kos i kulluar - 140 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/fli-traditional-homemade.jpg" alt="Fli tradicional"></div>
+            <h3>Fli tradicional - 140 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/specanekajmak.avif" alt="Speca në kajmak"></div>
+            <h3>Speca në kajmak - 200 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/Pasul-ne-tave.png" alt="Pasul në tavë"></div>
+            <h3>Pasul në tavë - 180 den</h3>
+        </div>
+
+        <div class="extra-item">
+            <div class="image"><img src="image/kepurdha.jpg" alt="Këpurdha të fërguara"></div>
+            <h3>Këpurdha të fërguara - 200 den</h3>
+        </div>
+    </div>
+
+    <footer>© 2025 Menu e Shtepise. Të gjitha të drejtat e rezervuara.</footer>
+</div>
+
+</body>
+</html>
