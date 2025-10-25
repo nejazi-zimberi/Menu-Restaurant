@@ -4,186 +4,300 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sallata Menu</title>
+    <script>
+  const translations = {
+    sq: {
+      tradicionale: "Tradicionale",
+      supa: "Supa",
+      sallata: "Sallata",
+      shtesa: "Shtesa",
+      pasta: "Pasta",
+      pica: "Pica",
+      mish: "Mishërat",
+      desert: "Desert",
+      akullore: "Akullore",
+      joalk: "Pije JoAlkoolike",
+      alk: "Pije Alkoolike"
+    },
+    en: {
+      tradicionale: "Traditional",
+      supa: "Soups",
+      sallata: "Salads",
+      shtesa: "Add-ons",
+      pasta: "Pasta",
+      pica: "Pizza",
+      mish: "Meats",
+      desert: "Dessert",
+      akullore: "Ice Cream",
+      joalk: "Non-Alcoholic Drinks",
+      alk: "Alcoholic Drinks"
+    },
+    mk: {
+      tradicionale: "Традиционално",
+      supa: "Супи",
+      sallata: "Салати",
+      shtesa: "Додатоци",
+      pasta: "Тестенини",
+      pica: "Пица",
+      mish: "Меса",
+      desert: "Десерт",
+      akullore: "Сладолед",
+      joalk: "Безалкохолни пијалаци",
+      alk: "Алкохолни пијалаци"
+    }
+  };
+
+  const langSelect = document.getElementById("languageSelect");
+
+  langSelect.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    for (const key in translations[lang]) {
+      const el = document.getElementById(key);
+      if (el) el.textContent = translations[lang][key];
+    }
+  });
+</script>
+
   <style>
 
-    html {
-    scroll-behavior: smooth;
-  }
+  html {
+  scroll-behavior: smooth;
+}
 
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 10px 15px;
-  }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px 15px;
+}
 
+nav a {
+  text-decoration: none;
+  color: #5a3e1b;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin: 6px 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #c87b2d;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #c87b2d;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  margin-top: 80px;
+}
+
+section {
+  padding: 80px 20px;
+  border-bottom: 1px solid #e0d5c1;
+  scroll-margin-top: 90px; /* që titulli të mos mbulohet nga nav */
+}
+
+.section-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.2em;
+  color: #c87b2d;
+  text-align: center;
+  margin-bottom: 1em;
+  letter-spacing: 0.5px;
+}
+
+/* Animacion kur shfaqet seksioni (optional) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
   nav a {
-    text-decoration: none;
-    color: #5a3e1b;
-    font-weight: 600;
-    font-size: 0.95em;
-    margin: 6px 10px;
-    position: relative;
-    transition: color 0.3s ease;
+    font-size: 0.9em;
+    margin: 4px 6px;
   }
+}
 
-  nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #c87b2d;
-    transition: width 0.3s ease;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8ef;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+  color: #5a3e1b;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-page {
+  max-width: 450px;
+  max-height: 8000px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.5em;
+  color: #c87b2d;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  background-color: #f2e9dc; /* placeholder bg until image added */
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.menu-item h3 {
+  margin-top: 0.8em;
+  color: #c87b2d;
+  font-family: 'Georgia', serif;
+  font-size: 1.5em;
+}
+
+.menu-item p {
+  font-size: 1em;
+  margin: 0.4em 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #5a3e1b;
+  margin-top: 0.5em;
+}
+
+footer {
+  text-align: center;
+  margin: 3em 0 1em;
+  font-size: 0.9em;
+  color: #795548;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .menu-item img {
+    height: 220px;
   }
-
-  nav a:hover {
-    color: #c87b2d;
-  }
-
-  nav a:hover::after {
-    width: 100%;
-  }
-
-  main {
-    margin-top: 80px;
-  }
-
-  section {
-    padding: 80px 20px;
-    border-bottom: 1px solid #e0d5c1;
-    scroll-margin-top: 90px; /* që titulli të mos mbulohet nga nav */
-  }
-
   .section-title {
-    font-family: 'Georgia', serif;
-    font-size: 2.2em;
-    color: #c87b2d;
-    text-align: center;
-    margin-bottom: 1em;
-    letter-spacing: 0.5px;
+    font-size: 1.8em;
   }
+}
 
-  /* Animacion kur shfaqet seksioni (optional) */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* === Language Dropdown Styles (added) === */
+.language-dropdown {
+  position: relative;
+  margin-left: 15px;
+}
 
-  section {
-    animation: fadeInUp 0.8s ease forwards;
-  }
+.lang-btn {
+  background: #c87b2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    nav a {
-      font-size: 0.9em;
-      margin: 4px 6px;
-    }
-  }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff8ef;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-repeat: repeat;
-      color: #5a3e1b;
-      margin: 0;
-      padding: 0;
-    }
+.lang-btn:hover {
+  background: #a7621f;
+  transform: scale(1.05);
+}
 
-    .menu-page {
-      max-width: 450px;
-      max-height: 8000px;
-      margin: 2em auto;
-      padding: 2em;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
+.lang-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: 130px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease forwards;
+}
 
-    .section-title {
-      font-family: 'Georgia', serif;
-      font-size: 2.5em;
-      color: #c87b2d;
-      text-align: center;
-      margin-bottom: 1.5em;
-    }
+.lang-menu a {
+  display: block;
+  color: #5a3e1b;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
 
-    .menu-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2em;
-      text-align: center;
-      background: #fff;
-      border-radius: 15px;
-      padding: 1em;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
+.lang-menu a:hover {
+  background: #fff3e2;
+  color: #c87b2d;
+}
 
-    .menu-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
+.language-dropdown:hover .lang-menu {
+  display: block;
+}
 
-    .menu-item img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-      background-color: #f2e9dc; /* placeholder bg until image added */
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .menu-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .menu-item h3 {
-      margin-top: 0.8em;
-      color: #c87b2d;
-      font-family: 'Georgia', serif;
-      font-size: 1.5em;
-    }
-
-    .menu-item p {
-      font-size: 1em;
-      margin: 0.4em 0;
-    }
-
-    .price {
-      font-weight: bold;
-      font-size: 1.1em;
-      color: #5a3e1b;
-      margin-top: 0.5em;
-    }
-
-    footer {
-      text-align: center;
-      margin: 3em 0 1em;
-      font-size: 0.9em;
-      color: #795548;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 480px) {
-      .menu-item img {
-        height: 220px;
-      }
-      .section-title {
-        font-size: 1.8em;
-      }
-    }
   </style>
 </head>
 <body>
@@ -199,6 +313,14 @@
     <a href="#9">Akullore</a> |
     <a href="#10">Pije JoAlkoolike</a> |
     <a href="#11">Pije Alkoolike</a> |
+    <div class="language-dropdown">
+      <button class="lang-btn">🌐 Gjuha</button>
+      <div class="lang-menu">
+        <a href="?lang=sq">🇦🇱 Shqip</a>
+        <a href="?lang=en">🇬🇧 English</a>
+        <a href="?lang=mk">🇲🇰 Македонски</a>
+      </div>
+    </div>
   </nav>
 
     <section class="menu-page" id="1">
