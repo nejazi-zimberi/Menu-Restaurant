@@ -5,6 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sallata Menu</title>
   <style>
+
+    html {
+    scroll-behavior: smooth;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 15px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #5a3e1b;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin: 6px 10px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #c87b2d;
+    transition: width 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #c87b2d;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+  section {
+    padding: 80px 20px;
+    border-bottom: 1px solid #e0d5c1;
+    scroll-margin-top: 90px; /* që titulli të mos mbulohet nga nav */
+  }
+
+  .section-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.2em;
+    color: #c87b2d;
+    text-align: center;
+    margin-bottom: 1em;
+    letter-spacing: 0.5px;
+  }
+
+  /* Animacion kur shfaqet seksioni (optional) */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  section {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav a {
+      font-size: 0.9em;
+      margin: 4px 6px;
+    }
+  }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fff8ef;
@@ -102,8 +187,21 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#1">Tradicionale</a> |
+    <a href="#2">Supa</a> |
+    <a href="#3">Sallata</a> |
+    <a href="#4">Shtesa</a> |
+    <a href="#5">Pasta</a> |
+    <a href="#6">Pica</a> |
+    <a href="#7">Mishërat</a> |
+    <a href="#8">Desert</a> |
+    <a href="#9">Akullore</a> |
+    <a href="#10">Pije JoAlkoolike</a> |
+    <a href="#11">Pije Alkoolike</a> |
+  </nav>
 
-    <section class="menu-page">
+    <section class="menu-page" id="1">
     <h2 class="section-title">Menu Tradicionale & Fëmijë</h2>
 
     <div class="menu-item">
@@ -121,7 +219,7 @@
     </div>
 
     </section>
-  <section class="menu-page">
+  <section class="menu-page" id="2">
     <h2 class="section-title">Supa</h2>
 
     <div class="menu-item">
@@ -146,7 +244,7 @@
     </div>
 
   </section>
-  <section class="menu-page">
+  <section class="menu-page" id="3">
     <div class="section-title">Sallata</div>
 
     <div class="menu-item">
@@ -173,7 +271,7 @@
     </div>
   </section>
 
-  <section class="menu-page">
+  <section class="menu-page" id="4">
     <h2 class="section-title">Menu Shtesë</h2>
 
     <div class="menu-item">
@@ -234,7 +332,7 @@
   </section>
 
     </div>
-  <section class="menu-page">
+  <section class="menu-page" id="5">
     <h2 class="section-title">Sphageti</h2>
 
     <div class="menu-item">
@@ -282,7 +380,7 @@
     </div>
   </section>
 
-  <section class="menu-page">
+  <section class="menu-page" id="6">
     <h2 class="section-title">Menu e Picave</h2>
 
     <div class="menu-item">
@@ -335,11 +433,11 @@
     </div>
     </section>
 
-        <section class="menu-page">
+        <section class="menu-page" id="7">
     <h2 class="section-title">Mishërat</h2>
 
     <div class="menu-item">
-      <img src="image/Gishtapule.png" alt="Gishta Pule">
+      <img src="image/chickenFingers.jpg" alt="Gishta Pule">
       <h3>Gishta Pule</h3>
       <div class="price">300 den</div>
     </div>
@@ -411,7 +509,7 @@
     </div>
     </section>
 
-    <section class="menu-page">
+    <section class="menu-page" id="8">
   <h2 class="section-title">Desert</h2>
 
     <div class="menu-item">
@@ -433,7 +531,7 @@
     </div>
   </section>
 
-  <section class="menu-page">
+  <section class="menu-page" id="9">
     <h2 class="section-title">Akullore</h2>
 
     <div class="menu-item">
@@ -473,7 +571,7 @@
     </div>
     </section>
 
-    <section class="menu-page">
+    <section class="menu-page" id="10">
 
     <h2 class="section-title">Pije Freskuse</h2>
     <div class="menu-item">
@@ -560,7 +658,7 @@
     </div>
     </section>  
 
-    <section class="menu-page">
+    <section class="menu-page" id="11">
     <h2 class="section-title">Birrat</h2>
     <div class="menu-item">
       <img src="image/skopsko.jpg" alt="Shkupit">
@@ -655,19 +753,19 @@
 
     <h2 class="section-title">Vera e Kuqe</h2>
     <div class="menu-item">
-      <img src="image/Aleksandrija.jpg" alt="Vera e Kuqe">
+      <img src="image/red0.75kuve.jpg" alt="Vera e Kuqe">
       <h3>Aleksandrija kuve 0.187</h3>
       <div class="price">270 den</div>
       <h3>Aleksandrija kuve 0.75</h3>
       <div class="price">1000 den</div>
     </div>
     <div class="menu-item">
-      <img src="image/Luda Mara.jpg" alt="Vera e Kuqe">
+      <img src="image/luda-mara-red.jpg" alt="Vera e Kuqe">
       <h3>Luda Mara 0.75</h3>
       <div class="price">1200 den</div>
     </div>
     <div class="menu-item">
-        <img src="image/Barovo.jpg" alt="Vera e Kuqe">
+        <img src="image/0.75barovored.webp" alt="Vera e Kuqe">
         <h3>Barovo 0.75</h3>
         <div class="price">3200 den</div>
         </div>
